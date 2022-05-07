@@ -25,8 +25,6 @@ const Filters = () => {
    const companies = getUniqueValues(all_products, 'company')
    const colors = getUniqueValues(all_products, 'colors')
 
-
-
   return <Wrapper>
     <div className='content'>
       <form 
@@ -38,7 +36,7 @@ const Filters = () => {
             type='text'
             name='text' // matches the text in the filter.state from filter_context
             placeholder='search'
-            clearFilters='search-input'
+            className='search-input'
             value={text}
             onChange={updateFilters}
           />
@@ -88,6 +86,44 @@ const Filters = () => {
           </select>
         </div>
         {/* End of Company Filter */}
+
+        {/* Start of Color Filter */}
+        <div className='form-control'>
+          <h5>Colors</h5>
+          <div className='colors'>
+            {colors.map((c, index) => {
+              if (c === 'all') {
+                return (
+                <button
+                  key={index}
+                  name='color'
+                  onClick={updateFilters}
+                  data-color='all'
+                  className={`${ color === 'all' ? 'all-btn active'
+                  : 'all-btn'
+                  }`}> all
+                </button>
+                )
+              }
+              return (
+                <button
+                  key={index}
+                  name='color'
+                  style={{ background: c }}
+                  className={`${
+                    color === c ? 'color-btn active' :
+                    'color-btn'
+                  }`}
+                  data-color={c}
+                  onClick={updateFilters}
+                  >
+                    {color === c ? <FaCheck /> : null }
+                  </button>
+              )
+            })}
+          </div>
+        </div>
+        {/* End of Color Filter */}
       </form>
     </div>
   </Wrapper>
