@@ -19,11 +19,11 @@ const Filters = () => {
     updateFilters,
     clearFilters,
     all_products
-   } = useFilterContext()
+  } = useFilterContext()
 
-   const categories = getUniqueValues(all_products, 'category')
-   const companies = getUniqueValues(all_products, 'company')
-   const colors = getUniqueValues(all_products, 'colors')
+  const categories = getUniqueValues(all_products, 'category')
+  const companies = getUniqueValues(all_products, 'company')
+  const colors = getUniqueValues(all_products, 'colors')
 
   return <Wrapper>
     <div className='content'>
@@ -64,6 +64,7 @@ const Filters = () => {
           </div>
         </div>
         {/* End of Category */}
+
         {/* Start of Company Filter */}
         <div className='form-control'>
           <h5>Company</h5>
@@ -124,7 +125,37 @@ const Filters = () => {
           </div>
         </div>
         {/* End of Color Filter */}
+
+        {/* Start of Price filter */}
+        <div className='form-control'>
+          <h5>Price</h5>
+          <p className='price'>{formatPrice(price)}</p>
+          <input 
+            type='range'
+            name='price'
+            onChange={updateFilters}
+            min={min_price}
+            max={max_price}
+            value={price}
+          />  
+        </div>
+        {/* End of Price filter */}
+
+        {/* Start of Shipping Filter */}
+        <div className='form-control shipping'>
+          <label htmlFor='shipping'> free shipping</label>
+          <input type='checkbox' name='shipping' id='shipping'
+            onChange={updateFilters}
+            checked={shipping}
+          />
+        </div>
+        {/* End of Shipping Filter */}
       </form>
+      <button type='button' className='clear-btn'
+        onClick={clearFilters}>
+          {' '}
+          clear filters
+        </button>
     </div>
   </Wrapper>
 }
