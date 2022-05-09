@@ -8,13 +8,10 @@ import { CartProvider } from './context/cart_context'
 import { UserProvider } from './context/user_context'
 import { Auth0Provider } from '@auth0/auth0-react'
 
-// dev-t88yrvfn.us.auth0.com
-// ocvCgoECYZUJ9Bc2hyJMZffLNLskeMg3
-
 ReactDOM.render(
     <Auth0Provider
-        domain="dev-t88yrvfn.us.auth0.com"
-        clientId="ocvCgoECYZUJ9Bc2hyJMZffLNLskeMg3"
+        domain={process.env.REACT_APP_AUTH_DOMAIN}
+        clientId={process.env.REACT_APP_AUTH_CLIENT_ID}
         redirectUri={window.location.origin}
         cacheLocation='localstorage'
     >
