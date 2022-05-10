@@ -12,9 +12,16 @@ const Hero = () => {
         comfort zone
       </h1>
       <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-      laboris nisi ut aliquip ex ea commodo consequat.
+      No one can deny that shopping for furniture in a physical store is pretty 
+      satisfying—you get to sit on tons of sofas, try out beds to your heart's content, and 
+      curl up in a bunch of different chairs to help you find exactly the right one for you.
+      And if that's what you're looking for, we've got a list of the best ones from international manufacturers.
+      But in terms of selection, the internet definitely has the brick-and-mortar
+      shopping experience beat. Online, you have pretty much every store and style you can
+      imagine just a few clicks away. You may not be able to test out a couch yourself when
+      you shop online, but you can read reviews, and you can also search for the precise 
+      item you want, narrowed down by your price range, all from the comfort of your own 
+      home.
       </p>
       <Link to='/products' className='btn hero-btn'>
         shop now
