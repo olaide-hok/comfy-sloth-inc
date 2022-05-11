@@ -1,37 +1,39 @@
-import React from 'react'
-import styled from 'styled-components'
-import { services } from '../utils/constants'
+import React from "react";
+import styled from "styled-components";
+import { services } from "../utils/constants";
 
 const Services = () => {
   return (
     <Wrapper>
-      <div className='section-center'>
-        <article className='header'>
+      <div className="section-center">
+        <article className="header">
           <h3>
             custom furniture <br />
             built only for you
           </h3>
           <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur.
+            You may not be able to test out a couch yourself when you shop
+            online, but you can read reviews, and you can also search for the
+            precise item you want, narrowed down by your price range, all from
+            the comfort of your own home.
           </p>
         </article>
-        <div className='services-center'>
+        <div className="services-center">
           {services.map((service) => {
-            const {id, title, text, icon} = service
-            return <article key={id} className='service'>
-              <span className='icon'>
-                {icon}
-              </span>
-              <h4>{title}</h4>
-              <p>{text}</p>
-            </article>
+            const { id, title, text, icon } = service;
+            return (
+              <article key={id} className="service">
+                <span className="icon">{icon}</span>
+                <h4>{title}</h4>
+                <p>{text}</p>
+              </article>
+            );
           })}
         </div>
       </div>
     </Wrapper>
-  )
-}
+  );
+};
 
 const Wrapper = styled.section`
   h3,
@@ -95,5 +97,5 @@ const Wrapper = styled.section`
       transform: translateY(5rem);
     }
   }
-`
-export default Services
+`;
+export default Services;
